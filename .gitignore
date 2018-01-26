@@ -6,6 +6,9 @@
 *.user
 *.userosscache
 *.sln.docstates
+solution/
+pty*.dat
+pt*.dat
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -259,3 +262,24 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/TDBC/solution/pty009.dat
+/TDBC/solution/pty008.dat
+/TDBC/solution/pty007.dat
+/TDBC/solution/pty006.dat
+/TDBC/solution/pty005.dat
+/TDBC/solution/pty004.dat
+/TDBC/solution/pty003.dat
+/TDBC/solution/pty002.dat
+/TDBC/solution/pty001.dat
+/TDBC/solution/pty000.dat
+/TDBC/pt011.dat
+/TDBC/pt010.dat
+/TDBC/pt009.dat
+/TDBC/pt008.dat
+/TDBC/pt007.dat
+/TDBC/pt006.dat
+/TDBC/pt005.dat
+/TDBC/pt004.dat
+/TDBC/pt003.dat
+/TDBC/pt002.dat
+/TDBC/pt001.dat

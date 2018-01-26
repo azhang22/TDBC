@@ -1,0 +1,48 @@
+	0.263276884773416//gaussian_width
+	1751 11 11 0 //Moving domain:MF_IMAX; Moving distance: MF_I
+	1 //scheme:1.FB_v_p 2.FB_p_v 3.FB_vp 4.LeapTrap 5.RK4 6.RK2 7.ABM ;
+	1 1 1 1 //NorthBC SouthBC WestBC EastBC and
+			//B.C type: 1.rigid 2.absorbing layer 3.porous media 4.time domain boundary condition;  
+	5501 500 17 300 //time_domain;out_difft(output each this value);FFT_m(2^FFT_m=N);frequency;//26470
+
+	3.0 4 //b(Vav=b*z);
+	1.4 1.01e5 14.5343 14.5343 //AirPara.adiabatic_coef;AirPara.Pav;AirPara.temperature1 for ground;
+			//AirPara.temperature2 for 10m Air;
+	-1.0 -1.0 200 //AbsorbPara.Cs;AbsorbPara.porosity;AbsorbPara.resistivity;
+	1.8 0.5 1e4 //PorePara.q;PorePara.porosity;PorePara.resistivity;
+	1.0 0.8 5e3 //PoreParb.q;PoreParb.porosity;PoreParb.resistivity;
+	35.0 3.0 35.0 5.0 //airpore: source.y;source.z;receiver.y;receiver.z;
+	
+	2e-5 //AirStep.diff_t;
+	0.04 0.04 //AirStep.diff_y;AirStep.diff_z;
+	0 16 5 0 //AirFrame.left;AirFrame.right;AirFrame.upper;AirFrame.lower;
+	
+	0.004 0.004 //NorthStep.diff_y;NorthStep.diff_z;
+	0 16 6.5 5 //NorthFrame.left;NorthFrame.right;NorthFrame.upper;NorthFrame.lower;
+	0 0 0 0 //SouthFrame.left;SouthFrame.right;SouthFrame.upper;SouthFrame.lower;
+	0 0 //WestStep.diff_y;WestStep.diff_z;
+	0 0 0 0 //WestFrame.left;WestFrame.right;WestFrame.upper;WestFrame.lower;
+	0 0 0 0 //WestSouthFrame.left;WestSouthFrame.right;WestSouthFrame.upper;WestSouthFrame.lower;
+	0 0 0 0 //WestNorthFrame.left;WestNorthFrame.right;WestNorthFrame.upper;WestNorthFrame.lower;
+	0 0 //EastStep.diff_y;EastStep.diff_z;
+	0 0 0 0 //EastFrame.left;EastFrame.right;EastFrame.upper;EastFrame.lower;
+	0 0 0 0 //EastSouthFrame.left;EastSouthFrame.right;EastSouthFrame.upper;EastSouthFrame.lower;
+	0 0 0 0 //EastNorthFrame.left;EastNorthFrame.right;EastNorthFrame.upper;EastNorthFrame.lower;
+	
+	1 4 // mpi_yarea, mpi_zarea
+
+	output.data
+	0 1600 ct.dat
+	
+	0 14.75 15.25 0.0 5.0 0.0 75.0 -5.0 0.0 0.0 0.0 0.0 0.0 0.0 //Curve:0:no.;1:cir.;2:cur.;cof.a;b;c;d~l;curve_pt;
+	14.5 15.5 0.0 5.0 //ystar,ystop;zstar,zstop;
+	0 0.1 14.0 1.0 9.0 //order, ystar,ystop,zstar,zstop
+	0 200 10.0 20.0 5.0 40 5.0 //receiver_circle,judge,receiver nmber,raduis,receiver.y,z,lineend.y,z;
+	1 125 // time_source frequency;
+
+	0 16 0 -1 //porous_media:SouthFrame.left;SouthFrame.right;SouthFrame.upper;SouthFrame.lower;
+	0.01 0.008 //SouthStep.diff_y;SouthStep.diff_z;
+	0 0 0 0	  //EastFrame.left;EastFrame.right;EastFrame.upper;EastFrame.lower;
+	0 0 //EastFrame.diff_y;EastFrame.diff_z;
+	0 0 0 0	  //WestFrame.left;WestFrame.right;WestFrame.upper;WestFrame.lower;
+	0 0 //WestFrame.diff_y;WestFrame.diff_z;	
